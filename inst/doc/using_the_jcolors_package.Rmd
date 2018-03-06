@@ -17,7 +17,7 @@ vignette: >
 
 [![Build Status](https://travis-ci.org/jaredhuling/jcolors.svg?branch=master)](https://travis-ci.org/jaredhuling/jcolors)
 
-`jcolors` contains a selection of `ggplot2` color palettes that I like
+`jcolors` contains a selection of `ggplot2` color palettes that I like (or can at least tolerate to some degree)
 
 ## Installation
 
@@ -40,8 +40,14 @@ jcolors('default')
 
 ## Display all available palettes
 
-```{r displayall, fig.height = 5}
+### Discrete palettes
+```{r displayall, fig.height = 8}
 display_all_jcolors()
+```
+
+### Continuous palettes
+```{r contin_example_display, fig.height = 8}
+display_all_jcolors_contin()
 ```
 
 
@@ -94,36 +100,6 @@ Color palettes can be displayed using `display_jcolors()`
 ## default
 ```{r}
 display_jcolors("default")
-```
-
-## pal2
-```{r}
-display_jcolors("pal2")
-```
-
-## pal3
-```{r}
-display_jcolors("pal3")
-```
-
-## pal4
-```{r}
-display_jcolors("pal4")
-```
-
-## pal5
-```{r}
-display_jcolors("pal5")
-```
-
-## pal6
-```{r}
-display_jcolors("pal6")
-```
-
-## rainbow
-```{r}
-display_jcolors("rainbow")
 ```
 
 ## More example plots

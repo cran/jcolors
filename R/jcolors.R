@@ -25,6 +25,12 @@ jcolors <- function(palette = c("default",
                                 "pal4",
                                 "pal5",
                                 "pal6",
+                                "pal7",
+                                "pal8",
+                                "pal9",
+                                "pal10",
+                                "pal11",
+                                "pal12",
                                 "rainbow"))
 {
 
@@ -91,14 +97,83 @@ jcolors <- function(palette = c("default",
               'orioles_orange'   = "#FC471E",
               'turquoise'        = "#55DDE0")
 
+
+
     pal6 <- c('rackley'          = "#558aa6",
               'dark_goldenrod'   = "#B1740F",
               'rubine_red'       = "#D5006A",
-              'dark_orchid'      = "#9449d2",
-              'canary'           = "#FFFD98",
               'midnight_green'   = "#08585A",
-              'rusty_red'        = "#D7263D",
-              'dark_khaki'       = "#BBBE64")
+              'canary'           = "#FFFD98",
+              'dark_orchid'      = "#9449d2",
+              'dark_khaki'       = "#BBBE64",
+              'rusty_red'        = "#D7263D")
+
+    pal7 <- c("very_dark_blue" = "#1d3554", #"#101D2E",
+              "very_soft_yellow"            = "#DFE07C",
+              "dark_moderate_yellow"        = "#7F8E39",
+              "dark_moderate_cyan"          = "#42858C",
+              "vivid_orange"                = "#E48F1B",
+              "very_dark_pink"              = "#570D32",
+              "vivid_yellow"                = "#E5C616",
+              "moderate_red"                = "#D33B44")
+
+    pal8 <- c("moderate_violet"             = "#943CB4",
+              "very_dark_cyan"              = "#194D44",
+              "slightly_desaturated_yellow" = "#C6CF6E",
+              "moderate_blue"               = "#5B6DC8",
+              "dark_moderate_lime_green"    = "#3CA437",
+              "very_dark_pink"              = "#6B244C",
+              "slightly_desaturated_cyan"   = "#6ACDC5",
+              'maximum_red'                 = "#DE1A1A",
+              "moderate_yellow"             = "#BBB53E",
+              "dark_moderate_blue"          = "#2A297A",
+              "dark_moderate_orange"        = "#995533",
+              "very_soft_magenta"           = "#D590DA")
+
+    pal9 <- c("#273B5B",
+              "#C1C243",
+              "#E73E26",
+              "#2E6657",
+              "#E8F5B3",
+              "#24A99C")
+
+    pal10 <- c('#3e71a8',
+               '#577f9f',
+               '#698e96',
+               '#779d8d',
+               '#84ad83',
+               '#8fbd77',
+               '#99cd6b',
+               '#a2dd5c',
+               '#aaee49',
+               '#b2ff2e')
+
+    pal11 <- c('#202547',
+               '#323649',
+               '#41474b',
+               '#4e5a4c',
+               '#5c6c4c',
+               '#68804c',
+               '#75944b',
+               '#81a949',
+               '#8ebe45',
+               '#9ad340',
+               '#a6e939',
+               '#b2ff2e')
+
+    pal12 <- c('#202547',
+               '#43444a',
+               '#5f654a',
+               '#7b8948',
+               '#97b043',
+               '#b2d736',
+               '#ceff1a',
+               '#d8e01b',
+               '#dfc11b',
+               '#e2a11b',
+               '#e37f1b',
+               '#e1581a',
+               '#de1a1a')
 
     rainbow <- c('rosso_corsa'          = "#D12600",
                  'spanish_orange'       = "#DB6A00",
@@ -110,6 +185,16 @@ jcolors <- function(palette = c("default",
                  'tyrian_purple'        = "#610052",
                  'amaranth_deep_purple' = "#953272")
 
+    rainbow2 <- c('rosso_corsa'          = "#D12600",
+                  'spanish_orange'       = "#DB6A00",
+                  'green_yellow'         = "#B2FF2E",
+                  'green'                = "#00AD00",
+                  'pale_cerulean'        = "#9CCADE",
+                  'sea_blue'             = "#005B94",
+                  'st_patricks_blue'     = "#1E2085",
+                  'tyrian_purple'        = "#610052",
+                  'amaranth_deep_purple' = "#953272")
+
     switch(match.arg(palette),
            default = default,
            pal2    = pal2,
@@ -117,6 +202,12 @@ jcolors <- function(palette = c("default",
            pal4    = pal4,
            pal5    = pal5,
            pal6    = pal6,
+           pal7    = pal7,
+           pal8    = pal8,
+           pal9    = pal9,
+           pal10   = pal10,
+           pal11   = pal11,
+           pal12   = pal12,
            rainbow = rainbow,
            earthen = earthen)
 }
@@ -141,6 +232,12 @@ display_jcolors <- function(palette = c("default",
                                         "pal4",
                                         "pal5",
                                         "pal6",
+                                        "pal7",
+                                        "pal8",
+                                        "pal9",
+                                        "pal10",
+                                        "pal11",
+                                        "pal12",
                                         "rainbow"))
 {
     palette <- match.arg(palette)
@@ -176,6 +273,12 @@ display_all_jcolors <- function()
                  "pal4",
                  "pal5",
                  "pal6",
+                 "pal7",
+                 "pal8",
+                 "pal9",
+                 "pal10",
+                 "pal11",
+                 "pal12",
                  "rainbow")
     jcols    <- sapply(palette, jcolors)
     maxlen   <- max(sapply(jcols, length))
@@ -248,6 +351,12 @@ scale_color_jcolors = function (palette = c("default",
                                             "pal4",
                                             "pal5",
                                             "pal6",
+                                            "pal7",
+                                            "pal8",
+                                            "pal9",
+                                            "pal10",
+                                            "pal11",
+                                            "pal12",
                                             "rainbow"),
                                 ...)
 {
@@ -272,6 +381,12 @@ scale_fill_jcolors = function (palette = c("default",
                                            "pal4",
                                            "pal5",
                                            "pal6",
+                                           "pal7",
+                                           "pal8",
+                                           "pal9",
+                                           "pal10",
+                                           "pal11",
+                                           "pal12",
                                            "rainbow"),
                                ...)
 {

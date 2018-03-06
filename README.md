@@ -1,49 +1,52 @@
 
+# `jcolors` intro
 
-
-# `jcolors` intro 
-
-[![Build Status](https://travis-ci.org/jaredhuling/jcolors.svg?branch=master)](https://travis-ci.org/jaredhuling/jcolors)
+[![version](http://www.r-pkg.org/badges/version/jcolors)](https://cran.r-project.org/package=jcolors)
+[![Build
+Status](https://travis-ci.org/jaredhuling/jcolors.svg?branch=master)](https://travis-ci.org/jaredhuling/jcolors)
 
 `jcolors` contains a selection of `ggplot2` color palettes that I like
+(or can at least tolerate to some degree)
 
 ## Installation
 
-
 Install `jcolors` from GitHub:
 
-
-```r
+``` r
 install.packages("devtools")
 devtools::install_github("jaredhuling/jcolors")
 ```
 
 Access the `jcolors` color palettes with `jcolors()`:
 
-
-```r
+``` r
 library(jcolors)
 
 jcolors('default')
 ```
 
-```
-##        kelly_green rich_electric_blue        maximum_red 
-##          "#29BF12"          "#00A5CF"          "#DE1A1A" 
-##     majorelle_blue fluorescent_orange 
-##          "#574AE2"          "#FFBF00"
-```
+    ##        kelly_green rich_electric_blue        maximum_red 
+    ##          "#29BF12"          "#00A5CF"          "#DE1A1A" 
+    ##     majorelle_blue fluorescent_orange 
+    ##          "#574AE2"          "#FFBF00"
 
 ## Display all available palettes
 
+### Discrete palettes
 
-```r
+``` r
 display_all_jcolors()
 ```
 
 ![](vignettes/readme_figs/displayall-1.png)<!-- -->
 
+### Continuous palettes
 
+``` r
+display_all_jcolors_contin()
+```
+
+![](vignettes/readme_figs/contin_example_display-1.png)<!-- -->
 
 # Discrete Color Palettes
 
@@ -51,8 +54,7 @@ display_all_jcolors()
 
 Now use `scale_color_jcolors()` with `ggplot2`:
 
-
-```r
+``` r
 library(ggplot2)
 library(gridExtra)
 
@@ -85,7 +87,7 @@ grid.arrange(pltl + scale_color_jcolors(palette = "default"),
 
 ![](vignettes/readme_figs/unnamed-chunk-3-1.png)<!-- -->
 
-```r
+``` r
 grid.arrange(pltl + scale_color_jcolors(palette = "pal2"),
              pltd + scale_color_jcolors(palette = "pal2"), ncol = 2)
 ```
@@ -96,7 +98,7 @@ Color palettes can be displayed using `display_jcolors()`
 
 ## default
 
-```r
+``` r
 display_jcolors("default")
 ```
 
@@ -104,7 +106,7 @@ display_jcolors("default")
 
 ## pal2
 
-```r
+``` r
 display_jcolors("pal2")
 ```
 
@@ -112,7 +114,7 @@ display_jcolors("pal2")
 
 ## pal3
 
-```r
+``` r
 display_jcolors("pal3")
 ```
 
@@ -120,7 +122,7 @@ display_jcolors("pal3")
 
 ## pal4
 
-```r
+``` r
 display_jcolors("pal4")
 ```
 
@@ -128,7 +130,7 @@ display_jcolors("pal4")
 
 ## pal5
 
-```r
+``` r
 display_jcolors("pal5")
 ```
 
@@ -136,31 +138,78 @@ display_jcolors("pal5")
 
 ## pal6
 
-```r
+``` r
 display_jcolors("pal6")
 ```
 
 ![](vignettes/readme_figs/unnamed-chunk-9-1.png)<!-- -->
 
-## rainbow
+## pal7
 
-```r
-display_jcolors("rainbow")
+``` r
+display_jcolors("pal7")
 ```
 
 ![](vignettes/readme_figs/unnamed-chunk-10-1.png)<!-- -->
 
+## pal8
+
+``` r
+display_jcolors("pal8")
+```
+
+![](vignettes/readme_figs/unnamed-chunk-11-1.png)<!-- -->
+
+## pal9
+
+``` r
+display_jcolors("pal9")
+```
+
+![](vignettes/readme_figs/unnamed-chunk-12-1.png)<!-- -->
+
+## pal10
+
+``` r
+display_jcolors("pal10")
+```
+
+![](vignettes/readme_figs/unnamed-chunk-13-1.png)<!-- -->
+
+## pal11
+
+``` r
+display_jcolors("pal11")
+```
+
+![](vignettes/readme_figs/unnamed-chunk-14-1.png)<!-- -->
+
+## pal12
+
+``` r
+display_jcolors("pal12")
+```
+
+![](vignettes/readme_figs/unnamed-chunk-15-1.png)<!-- -->
+
+## rainbow
+
+``` r
+display_jcolors("rainbow")
+```
+
+![](vignettes/readme_figs/unnamed-chunk-16-1.png)<!-- -->
+
 ## More example plots
 
-
-```r
+``` r
 grid.arrange(pltl + scale_color_jcolors(palette = "pal3"),
              pltd + scale_color_jcolors(palette = "pal3"), ncol = 2)
 ```
 
 ![](vignettes/readme_figs/moreplots-1.png)<!-- -->
 
-```r
+``` r
 grid.arrange(pltl + scale_color_jcolors(palette = "pal4"),
              pltd + scale_color_jcolors(palette = "pal4") + 
                  theme(panel.background = element_rect(fill = "grey5")), ncol = 2)
@@ -168,14 +217,14 @@ grid.arrange(pltl + scale_color_jcolors(palette = "pal4"),
 
 ![](vignettes/readme_figs/moreplots-2.png)<!-- -->
 
-```r
+``` r
 grid.arrange(pltl + scale_color_jcolors(palette = "pal5"),
              pltd + scale_color_jcolors(palette = "pal5"), ncol = 2)
 ```
 
 ![](vignettes/readme_figs/moreplots-3.png)<!-- -->
 
-```r
+``` r
 pltd <- ggplot(data = OrchardSprays, aes(x = rowpos, y = decrease,
 group = factor(treatment),
 colour = factor(treatment))) +
@@ -195,40 +244,34 @@ pltd + scale_color_jcolors(palette = "pal6")
 
 ![](vignettes/readme_figs/moreplots-4.png)<!-- -->
 
-
-
-
-
 # Continuous Color Palettes
 
 ## Display all continuous palettes
 
-```r
+``` r
 display_all_jcolors_contin()
 ```
 
 ![](vignettes/readme_figs/contin_example-1.png)<!-- -->
 
-
 ## Use with `ggplot2`
 
-
-```r
+``` r
 set.seed(42)
 plt <- ggplot(data.frame(x = rnorm(10000), y = rexp(10000, 1.5)), aes(x = x, y = y)) +
       geom_hex() + coord_fixed() + theme(legend.position = "bottom")
 
 plt2 <- plt + scale_fill_jcolors_contin("pal2", bias = 1.75) + theme_bw()
 plt3 <- plt + scale_fill_jcolors_contin("pal3", reverse = TRUE, bias = 2.25) + theme_bw()
-grid.arrange(plt2, plt3, ncol = 2)
+plt4 <- plt + scale_fill_jcolors_contin("pal12", reverse = TRUE, bias = 2) + theme_bw()
+grid.arrange(plt2, plt3, plt4, ncol = 2)
 ```
 
 ![](vignettes/readme_figs/mountain_ex-1.png)<!-- -->
 
 # `ggplot2` themes
 
-
-```r
+``` r
 library(scales)
 
 p1 <- ggplot(aes(x = carat, y = price), data = diamonds) + 
@@ -257,8 +300,7 @@ grid.arrange(p1, p2, ncol = 2)
 
 ![](vignettes/readme_figs/diamonds_light_theme-1.png)<!-- -->
 
-
-```r
+``` r
 p1 <- ggplot(aes(x = clarity, y = price), data = diamonds) + 
       geom_point(alpha = 0.25, size = 1, position = "jitter", aes(color = log(carat + 1))) +
       scale_y_continuous(trans = log10_trans(), limits = c(350, 15000),
@@ -277,17 +319,12 @@ grid.arrange(p1 + scale_color_jcolors_contin("pal3", bias = 1.75) + theme_light_
 
 ![](vignettes/readme_figs/jitterplot-1.png)<!-- -->
 
+If the background here were dark, then this would look
+nice:
 
-If the background here were dark, then this would look nice:
-
-
-```r
+``` r
 grid.arrange(p1 + scale_color_jcolors_contin("pal3", bias = 1.75) + theme_dark_bg(),
              p2 + scale_color_jcolors_contin("rainbow") + theme_dark_bg(), ncol = 2)
 ```
 
 ![](vignettes/readme_figs/darkbg-1.png)<!-- -->
-
-
-
-

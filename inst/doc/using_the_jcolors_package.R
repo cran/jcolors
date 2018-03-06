@@ -8,8 +8,11 @@ library(jcolors)
 jcolors('default')
 
 
-## ----displayall, fig.height = 5------------------------------------------
+## ----displayall, fig.height = 8------------------------------------------
 display_all_jcolors()
+
+## ----contin_example_display, fig.height = 8------------------------------
+display_all_jcolors_contin()
 
 ## ----eval = TRUE, message = FALSE, warning = FALSE-----------------------
 library(ggplot2)
@@ -49,24 +52,6 @@ grid.arrange(pltl + scale_color_jcolors(palette = "pal2"),
 
 ## ------------------------------------------------------------------------
 display_jcolors("default")
-
-## ------------------------------------------------------------------------
-display_jcolors("pal2")
-
-## ------------------------------------------------------------------------
-display_jcolors("pal3")
-
-## ------------------------------------------------------------------------
-display_jcolors("pal4")
-
-## ------------------------------------------------------------------------
-display_jcolors("pal5")
-
-## ------------------------------------------------------------------------
-display_jcolors("pal6")
-
-## ------------------------------------------------------------------------
-display_jcolors("rainbow")
 
 ## ----moreplots-----------------------------------------------------------
 grid.arrange(pltl + scale_color_jcolors(palette = "pal3"),
